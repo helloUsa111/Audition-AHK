@@ -1,0 +1,288 @@
+;-----Move playhead to previous cut with faster playback = z
+;-----Ripple Delete Time Selection(longer cuts)=^x
+;----Ripple Delete Selected clip=^+x
+;--------------Cut clip at Playhead=^e
+;--------------Ripple Trim To Previous cut=q
+;--------------Ripple Trim To Next cut=w
+;---------create gap for new point/sentence/paragraph(20 frames)=f1
+;---------create gap for new point/sentence/paragraph(10 frames)=f2
+
+
+
+;-----Move playhead to previous cut with faster playback------
+#IfWinActive ahk_exe Adobe Audition.exe
+z::
+Send, !{Left}
+sleep 50
+Send, l
+sleep 80
+Send, l
+sleep 80
+Send, l
+sleep 80
+return
+;-----Move playhead to previous cut with faster playback-----
+
+
+
+;-----Ripple Delete Time Selection(longer cuts)------
+#IfWinActive ahk_exe Adobe Audition.exe
+^x::
+Send, ^h ;Ripple delete time selection
+sleep 50
+Send, g ;Deselect
+sleep 50
+Send, j
+sleep 80
+Send, j
+sleep 80
+Send, j
+sleep 80
+Send, j
+sleep 80
+Send, j
+sleep 80
+Send, j
+sleep 300 ;for checking the cut
+Send, k ;for checking the cut
+sleep 80
+Send, l
+sleep 80
+Send, l
+sleep 80
+Send, l
+sleep 80
+return
+;-----Ripple Delete Time Selection(longer clips)------
+
+
+;----Ripple Delete Selected clip--------
+^+x::
+Send, +{Delete}
+sleep 80
+Send, !{Left}
+sleep 80
+Send, j
+sleep 80
+Send, j
+sleep 80
+Send, j
+sleep 80
+Send, j
+sleep 80
+Send, j
+sleep 80
+Send, j
+sleep 300 ;for checking the cut
+Send, k ;for checking the cut
+sleep 80
+Send, l
+sleep 80
+Send, l
+sleep 80
+Send, l
+sleep 80
+return
+;----Ripple Delete Selected clip--------
+
+
+
+
+;--------------Cut clip at Playhead---------------
+#IfWinActive ahk_exe Adobe Audition.exe
+^e::
+Send, ^!t ;select clips under playhead
+sleep 50
+Send, ^k ;I set split at ctrl+k
+sleep 50
+return
+;--------------Cut clip at Playhead---------------
+
+
+
+
+;--------------Ripple Trim To Previous cut---------------
+#IfWinActive ahk_exe Adobe Audition.exe
+q::
+Send, ^!t ;select clips under playhead
+sleep 50
+Send, ^x ;I set Trim In Point to playhead-ctrl+x
+sleep 50
+Send, ^f ;Ripple delete gap in selected track=ctrl+f
+sleep 200
+Send, !{left}
+Send, j
+sleep 80
+Send, j
+sleep 80
+Send, j
+sleep 80
+Send, j
+sleep 80
+Send, j
+sleep 80
+Send, j
+sleep 80
+Send, j
+sleep 80
+Send, j
+sleep 500 ;for checking the cut
+Send, k ;for checking the cut
+sleep 80
+Send, l
+sleep 80
+Send, l
+sleep 80
+Send, l
+return
+;--------------Ripple Trim To Previous cut---------------
+
+
+
+;--------------Ripple Trim To Next cut---------------
+#IfWinActive ahk_exe Adobe Audition.exe
+w::
+Send, ^!t
+sleep 50
+Send, u ;I set Trim out Point to playhead = u
+sleep 50
+Send, ^f ;Ripple delete gap in selected track=ctrl+f
+sleep 50
+Send, !{left}
+Send, j
+sleep 80
+Send, j
+sleep 80
+Send, j
+sleep 80
+Send, j
+sleep 80
+Send, j
+sleep 80
+Send, j
+sleep 80
+Send, j
+sleep 80
+Send, j
+sleep 500 ;for checking the cut
+Send, k ;for checking the cut
+sleep 80
+Send, l
+sleep 80
+Send, l
+sleep 80
+Send, l
+return
+;--------------Ripple Trim To Next cut---------------
+
+
+;---------create gap for new point/sentence/paragraph(20 frames)------------
+#IfWinActive ahk_exe Adobe Audition.exe
+f1::
+Send, ^!t
+sleep 20
+Send, ^k ;I set split at ctrl+k
+sleep 20
+Send, ^!t
+sleep 80
+Send, !+.
+sleep 80
+Send, !+.
+sleep 80
+Send, !+.
+sleep 80
+Send, !+.
+sleep 80
+Send, !+.
+sleep 80
+Send, !+.
+sleep 80
+Send, !+.
+sleep 80
+Send, !+.
+sleep 80
+Send, !+.
+sleep 80
+Send, !+.
+sleep 80
+Send, j
+sleep 80
+Send, j
+sleep 80
+Send, j
+sleep 80
+Send, j
+sleep 80
+Send, j
+sleep 80
+Send, j
+sleep 80
+Send, j
+sleep 80
+Send, j
+sleep 300 ;for checking the cut
+Send, k ;for checking the cut
+sleep 80
+Send, l
+sleep 80
+Send, l
+sleep 80
+Send, l
+return
+;---------create gap for new point/sentence/paragraph(20 frames)------------
+
+
+
+
+;---------create gap for new point/sentence/paragraph(10 frames)------------
+#IfWinActive ahk_exe Adobe Audition.exe
+f2::
+Send, ^!t
+sleep 20
+Send, ^k ;I set split at ctrl+k
+sleep 20
+Send, ^!t
+sleep 80
+Send, !+.
+sleep 80
+Send, !+.
+sleep 80
+Send, !+.
+sleep 80
+Send, !+.
+sleep 80
+Send, !+.
+sleep 80
+Send, !+.
+sleep 80
+Send, !+.
+sleep 80
+Send, j
+sleep 80
+Send, j
+sleep 80
+Send, j
+sleep 80
+Send, j
+sleep 80
+Send, j
+sleep 80
+Send, j
+sleep 80
+Send, j
+sleep 80
+Send, j
+sleep 300 ;for checking the cut
+Send, k ;for checking the cut
+sleep 80
+Send, l
+sleep 80
+Send, l
+sleep 80
+Send, l
+return
+;---------create gap for new point/sentence/paragraph(10 frames)------------
+
+
+
+;---------------ENd of Audition Shortcuts-----------------------
